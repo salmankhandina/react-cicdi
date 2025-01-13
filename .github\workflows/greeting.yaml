@@ -1,0 +1,14 @@
+# name : greeting
+
+# on : push 
+
+# job :
+    
+#     test:
+#     run on : ubantu latest
+#     steps :
+#     name : get code
+#     run:
+#      echo "cloning repo.."
+#      echo "${{to json(git hub)}}"
+  
