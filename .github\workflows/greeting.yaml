@@ -1,14 +1,23 @@
-# name : greeting
+ name : greeting
 
-# on : push 
+ on : [push,workflow_dispatch] 
 
-# job :
+ job :
     
-#     test:
-#     run on : ubantu latest
-#     steps :
-#     name : get code
-#     run:
-#      echo "cloning repo.."
-#      echo "${{to json(git hub)}}"
-  
+     test:
+     run on : ubantu latest
+     steps :
+         - name : get code
+           uses: action/checkout@v4
+
+         -  name: install node 20
+            uses: action/checkout@v4
+     
+            with:
+              node-version: 20
+         - name: print node node-version
+           run: node node-v
+         - name: install dependencies
+           run: npm ci
+         - name: run tests
+           run: npm run test
