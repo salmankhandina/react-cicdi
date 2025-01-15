@@ -14,7 +14,7 @@
             uses: action/checkout@v4
      
             with:
-              node-version: 20
+            node-version: 20
          - name: print node node-version
            run: node node-v
          - name: install dependencies
